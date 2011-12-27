@@ -17,7 +17,7 @@ import tput # .colorize, .decolorize
 SORT_ORDER = ['-c'] #TODO. Is a list of args to ls that say how to sort (within categories)
 TEXT_FILE_EXTENSIONS = ['.txt'] # TODO add more?
 PICTURE_FILE_EXTENSIONS = ['.jpg', '.png', '.gif'] # TODO add more
-ARCHIVE_FILE_EXTENSIONS = ['.zip', '.tar', '.gz', '.bz2'] # TODO add more
+ARCHIVE_FILE_EXTENSIONS = ['.zip', '.tar', '.gz', '.bz2', '.rar'] # TODO add more
 PACKAGE_FILE_EXTENSIONS = ['.app'] # TODO add more?
 
 
