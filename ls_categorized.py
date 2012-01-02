@@ -12,6 +12,7 @@
 
 import subprocess # .call and .check_output
 import tput # .colorize, .decolorize
+import sys # .argv
 
 
 SORT_ORDER = ['-c'] #TODO. Is a list of args to ls that say how to sort (within categories)
@@ -21,15 +22,20 @@ ARCHIVE_FILE_EXTENSIONS = ['.zip', '.tar', '.gz', '.bz2', '.rar'] # TODO add mor
 PACKAGE_FILE_EXTENSIONS = ['.app'] # TODO add more?
 
 
+# allow lsing dirs other than .
+# and allow passing other args to the interior 'ls'
+args_1 = sys.argv[1:]
+
+
 # that's a -"ell"
-ls_ell_string = subprocess.check_output(['ls', '-lt'] + SORT_ORDER)
+ls_ell_string = subprocess.check_output(['ls', '-lt'] + SORT_ORDER + args_1)
 ls_ell_lines = ls_ell_string.split('\n')
 
 ls_ell_lines = ls_ell_lines[1:] # throw away the "total" line
 ls_ell_lines = ls_ell_lines[:-1] # throw away the final blank line
 
 # that's a -"one"
-ls_one_string = subprocess.check_output(['ls', '-1t'] + SORT_ORDER)
+ls_one_string = subprocess.check_output(['ls', '-1t'] + SORT_ORDER + args_1)
 ls_one_lines = ls_one_string.split('\n')
 ls_one_lines = ls_one_lines[:-1] # throw away the final blank line
 
