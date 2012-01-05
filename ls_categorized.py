@@ -84,7 +84,11 @@ for (one, ell) in zip(ls_one_lines, ls_ell_lines):
     
     # soft link?
     if ell[0] == 'l':
-        soft_links.addItem(one)
+        # for soft links, the list entry shall
+        # include the -> dest
+        arrow_loc = ell.find('->')
+        arrow_and_dest = ell[arrow_loc:]
+        soft_links.addItem(one + ' ' + arrow_and_dest)
 	continue
 
     # directory?
