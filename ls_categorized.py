@@ -15,6 +15,7 @@ import tput # .colorize, .decolorize
 import sys # .argv
 
 
+INDENT = '  '
 SORT_ORDER = ['-c'] #TODO. Is a list of args to ls that say how to sort (within categories)
 TEXT_FILE_EXTENSIONS = ['.txt'] # TODO add more?
 PICTURE_FILE_EXTENSIONS = ['.jpg', '.png', '.gif'] # TODO add more
@@ -141,11 +142,11 @@ for category in PRINTING_ORDER:
         print ''
 
         tput.colorize(fg = category.color, bold = True)
-        print category.name
+        print INDENT, category.name
         tput.decolorize()
 
         for one in category.items:
-            print one
+            print INDENT, one
 
 # done-zo-matic
 
