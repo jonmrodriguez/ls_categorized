@@ -10,7 +10,7 @@
 #
 
 
-import subprocess # .call and .check_output
+import subprocess26 as subprocess # .call and .check_output
 import tput # .colorize, .decolorize
 import sys # .argv
 
