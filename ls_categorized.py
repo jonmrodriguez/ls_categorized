@@ -69,11 +69,12 @@ class Category():
 
 # check membership in this order. membership := the first one that's true
 # red for containers
-# magenta for executables
+# blue for code
 # green otherwise
-soft_links = Category("SOFT LINKS", "GREEN")
+soft_links = Category("SOFT LINKS", "RED")
 directories = Category("DIRECTORIES", "RED")
-executables = Category("EXECUTABLES", "MAGENTA")
+executables = Category("EXECUTABLES", "BLUE")
+c_files = Category("[CH]", "BLUE")
 texts = Category("TEXTS", "GREEN")
 pictures = Category("PICTURES", "GREEN")
 packages = Category("PACKAGES", "RED")
