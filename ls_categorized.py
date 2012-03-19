@@ -17,6 +17,7 @@ import sys # .argv
 
 INDENT = '  '
 SORT_ORDER = ['-c'] #TODO. Is a list of args to ls that say how to sort (within categories)
+C_FILE_EXTENSIONS = ['.c', '.h', '.cpp']
 TEXT_FILE_EXTENSIONS = ['.txt'] # TODO add more?
 PICTURE_FILE_EXTENSIONS = ['.jpg', '.png', '.gif'] # TODO add more
 ARCHIVE_FILE_EXTENSIONS = ['.zip', '.tar', '.gz', '.bz2', '.rar'] # TODO add more
@@ -94,6 +95,7 @@ for (one, ell) in zip(ls_one_lines, ls_ell_lines):
 	continue
 
     # directory?
+    # // includes dotdirs
     if ell[0] == 'd':
 	directories.addItem(one)
 	continue
@@ -104,6 +106,11 @@ for (one, ell) in zip(ls_one_lines, ls_ell_lines):
     if ell[3] == 'x':
 	executables.addItem(one)
 	continue
+
+    # c_file?
+    if extension_in(one, C_FILE_EXTENSIONS):
+        c_files.addItem(one)
+        continue
 
     # text?
     if extension_in(one, TEXT_FILE_EXTENSIONS):
@@ -134,7 +141,7 @@ for (one, ell) in zip(ls_one_lines, ls_ell_lines):
 
 ### Print shit, yo
 
-PRINTING_ORDER = [soft_links, directories, packages, archives, others, pictures, texts, executables]
+PRINTING_ORDER = [soft_links, directories, packages, archives, others, pictures, texts, c_files, executables]
 
 
 for category in PRINTING_ORDER:
