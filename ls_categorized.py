@@ -30,14 +30,14 @@ args_1 = sys.argv[1:]
 
 
 # that's a -"ell"
-ls_ell_string = subprocess.check_output(['ls', '-lt'] + SORT_ORDER + args_1)
+ls_ell_string = subprocess.check_output(['ls', '-lat'] + SORT_ORDER + args_1)
 ls_ell_lines = ls_ell_string.split('\n')
 
 ls_ell_lines = ls_ell_lines[1:] # throw away the "total" line
 ls_ell_lines = ls_ell_lines[:-1] # throw away the final blank line
 
 # that's a -"one"
-ls_one_string = subprocess.check_output(['ls', '-1t'] + SORT_ORDER + args_1)
+ls_one_string = subprocess.check_output(['ls', '-1at'] + SORT_ORDER + args_1)
 ls_one_lines = ls_one_string.split('\n')
 ls_one_lines = ls_one_lines[:-1] # throw away the final blank line
 
