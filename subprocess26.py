@@ -2,6 +2,8 @@
 
 """
 dirty rotten hack to make subprocess.check_output work on python2.6 (rescomp)
+
+usage: import subprocess26 as subprocess
 """
 
 
