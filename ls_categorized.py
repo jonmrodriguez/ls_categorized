@@ -1,4 +1,4 @@
-#! /usr/bin/python
+#! /usr/bin/python2.7
 
 
 #
@@ -10,7 +10,7 @@
 #
 
 
-import subprocess26 as subprocess # .call and .check_output
+import subprocess # .call and .check_output
 import tput # .colorize, .decolorize
 import sys # .argv
 
